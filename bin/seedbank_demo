@@ -1,0 +1,14 @@
+#!/usr/bin/env python
+
+# --< first, get the src/ dir of this repo onto the PYTHONPATH. >-- #
+
+from os.path import realpath, dirname, join
+import sys
+sys.path.insert(0, join(dirname(realpath(sys.argv[0])), '..', 'src'))
+
+# ----------------------------------------------------------------- #
+
+import seedbank as random
+
+for i in xrange(0, 5):
+    print random.randint(0, 1000), random.choice("aeiou")

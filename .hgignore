@@ -1,0 +1,4 @@
+syntax: glob
+
+*.pyc
+seedbank.log
