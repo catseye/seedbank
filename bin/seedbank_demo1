@@ -10,5 +10,4 @@ sys.path.insert(0, join(dirname(realpath(sys.argv[0])), '..', 'src'))
 
 import seedbank as random
 
-for i in xrange(0, 5):
-    print random.randint(0, 1000), random.choice("aeiou")
+print ''.join([random.choice("aeiou") for i in xrange(0, random.randint(5, 8))])

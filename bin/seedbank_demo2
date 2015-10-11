@@ -1,0 +1,23 @@
+#!/usr/bin/env python
+
+# --< first, get the src/ dir of this repo onto the PYTHONPATH. >-- #
+
+from os.path import realpath, dirname, join
+import sys
+sys.path.insert(0, join(dirname(realpath(sys.argv[0])), '..', 'src'))
+
+# ----------------------------------------------------------------- #
+
+# to show that "from" imports also work, and
+# to show that multiple imports do not log multiple times
+
+from seedbank import randint, choice
+
+def print_line():
+    from seedbank import randint as i, choice as c
+    print i(0, 1000), c("abc")
+
+print randint(0, 1000), choice("xyz")
+for x in xrange(0, 4):
+    print_line()
+
