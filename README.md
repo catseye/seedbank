@@ -37,9 +37,12 @@ and you can continue to use all the functions in the `random` module as normal,
 while `seedbank` takes care of the seeding and reporting in the following
 manner:
 
-*   If the environment variable `SEEDBANK_SEED` was set to an integer,
-    it uses that as the seed for the random number generator.  Otherwise,
-    it picks a random integer to use as the seed.
+*   If the environment variable `SEEDBANK_SEED` was set,
+    *   If it was set to an integer, it uses that as the seed for
+        the random number generator.
+    *   If it was set to `LAST`, it uses the last seed that was
+        recorded in the log file, as the seed.
+    *   Otherwise, it picks an integer at random to use as the seed.
 *   After the seed is picked, it appends a line to a logfile which contains
     the name of the script, the timestamp, and the chosen seed.  If a file
     called `seedbank.log` exists in your home directory, that file will be
@@ -48,6 +51,7 @@ manner:
 
 Then, if you ever want to re-run with a seed that was picked, you can
 review the log file, pick the seed you want, and set `SEEDBANK_SEED` to that.
+Or just set `SEEDBANK_SEED=LAST` to re-use the immediately previous seed.
 
 You can of course import individual functions from `seedbank` as if they
 were from `random`, and that works too:
