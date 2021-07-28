@@ -1,3 +1,11 @@
+**\*\*\* NOTE: Discontinued. \*\*\* This project is discontinued.
+The author now considers this to be a poor method.  A superior
+method is to always use a fixed seed during development.  See the
+[Anne of Green Garbles `gen-from-model.py` script](https://github.com/catseye/NaNoGenMo-Entries-2019/blob/master/Anne%20of%20Green%20Garbles/gen-from-model.py)
+for more information.**
+
+- - - -
+
 seedbank
 ========
 
